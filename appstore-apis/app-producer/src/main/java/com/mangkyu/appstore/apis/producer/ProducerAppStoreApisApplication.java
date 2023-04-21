@@ -1,4 +1,4 @@
-package com.mangkyu.appstore.apis.consumer;
+package com.mangkyu.appstore.apis.producer;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -9,10 +9,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.mangkyu.appstore.core.domain.CoreDomainConfig;
 
 
-@Import({CoreDomainConfig.class})
-@EnableTransactionManagement
-@EntityScan
-@EnableJpaRepositories
 @SpringBootApplication
-public class ApisConsumerConfig {
+public class ProducerAppStoreApisApplication {
 }
