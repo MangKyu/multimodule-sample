@@ -1,3 +1,5 @@
 rootProject.name = "multimodule-sample"
 include 'global-utils'
+//include 'appstore-core'
+include 'appstore-core:domain'
 
