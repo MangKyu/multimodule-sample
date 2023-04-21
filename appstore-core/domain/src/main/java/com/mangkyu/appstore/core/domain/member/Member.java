@@ -1,13 +1,13 @@
 package com.mangkyu.appstore.core.domain.member;
 
-import java.time.ZonedDateTime;
-
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,6 +17,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name = "member")
 public class Member {
 
 	@Id
@@ -26,6 +28,6 @@ public class Member {
 	private String name;
 
 	@Enumerated(EnumType.STRING)
-	private ZonedDateTime createdAt;
+	private MemberRole memberRole;
 
 }
