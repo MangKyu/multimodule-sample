@@ -7,6 +7,7 @@ buildscript {
 // plugin 이란 미리 구성해놓은 task 들의 모음이며, 특정 빌드과정에 필요한 기본정보를 포함함
 plugins {
     id 'java' // 테스트, 번들링 기능과 함께 Java 컴파일을 추가해주며, 다른 JVM 언어 플러그인의 기반이 됨
+    id 'java-library' // java 플러그인을 확장함, 이를 통해 implementation과는 분리되는 api 기능을 사용할 수 있음
     id 'org.springframework.boot' version '3.0.4' // 실행가능한 jar 또는 war로 패키징하여 애플리케이션 실행이 가능하도록 하며, spring-boot-dependencies 기반의 의존성 관리를 사용함
     id 'io.spring.dependency-management' version '1.1.0' // 자동으로 spring-boot-dependencies bom을 끌어와서 버전 관리를 해줌
 }
@@ -18,7 +19,6 @@ allprojects {
     targetCompatibility = '17'
 }
 
-
 // 루트 제외한 전체 서브 모듈에 해당되는 설정
 // settings.gradle에 include된 전체 프로젝트에 대한 공통 사항을 명시함
 // root 프로젝트까지 적용하고 싶다면 allprojects에서 사용해야 함
@@ -26,7 +26,7 @@ subprojects {
 
     // subprojects 블록 안에서는 plugins 블록을 사용할 수 없으므로 apply plugin을 사용해야 함
     apply plugin: 'java'
-    apply plugin: 'java-library' // java 플러그인을 확장함, 이를 통해 implementation과는 분리되는 api 기능을 사용할 수 있음
+    apply plugin: 'java-library'
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
@@ -41,8 +41,6 @@ subprojects {
     dependencies {
         implementation "org.projectlombok:lombok"
         annotationProcessor "org.projectlombok:lombok"
-        implementation "io.spring.gradle:dependency-management-plugin"
-        implementation "io.spring.gradle:dependency-management-plugin"
         implementation 'org.springframework.boot:spring-boot-starter-web'
 
         testImplementation "org.projectlombok:lombok"
