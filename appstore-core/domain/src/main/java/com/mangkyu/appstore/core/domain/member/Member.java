@@ -1,12 +1,3 @@
-/*
- *
- *  Member.java 2023-04-21
- *
- *  Copyright 2023 WorksMobile Corp. All rights Reserved.
- *  WorksMobile PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- *
- */
-
 package com.mangkyu.appstore.core.domain.member;
 
 import java.time.ZonedDateTime;

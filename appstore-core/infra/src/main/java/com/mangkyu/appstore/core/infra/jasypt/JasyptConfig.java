@@ -1,4 +1,4 @@
-package com.mangkyu.appstore.core.infra.logging;
+package com.mangkyu.appstore.core.infra.jasypt;
 
 import org.jasypt.encryption.StringEncryptor;
 import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;

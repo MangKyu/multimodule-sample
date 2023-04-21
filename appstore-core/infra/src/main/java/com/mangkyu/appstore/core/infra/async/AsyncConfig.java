@@ -1,11 +1,3 @@
-/*
- *
- *  AsyncConfig.java 2023-02-20
- *
- *  Copyright 2023 WorksMobile Corp. All rights Reserved.
- *  WorksMobile PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
- *
- */
 package com.mangkyu.appstore.core.infra.async;
 
 import static org.springframework.context.support.AbstractApplicationContext.*;
@@ -19,7 +11,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 @EnableAsync
-class AsyncConfig {
+public class AsyncConfig {
 
 	/**
 	 * 이벤트 처리는 반드시 비동기로만 처리되도록 설정함

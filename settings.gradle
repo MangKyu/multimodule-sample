@@ -3,4 +3,6 @@ include 'global-utils'
 //include 'appstore-core'
 include 'appstore-core:domain'
 include 'appstore-core:infra'
+//include 'appstore-apis'
+include 'appstore-apis:app-producer'
 
