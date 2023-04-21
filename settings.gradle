@@ -5,4 +5,5 @@ include 'appstore-core:domain'
 include 'appstore-core:infra'
 //include 'appstore-apis'
 include 'appstore-apis:app-producer'
+include 'appstore-apis:app-consumer'
 

@@ -34,4 +34,7 @@ public class App {
 	@Enumerated(EnumType.STRING)
 	private AppStatus status;
 
+	public boolean isVisible() {
+		return status == AppStatus.ACTIVE;
+	}
 }
