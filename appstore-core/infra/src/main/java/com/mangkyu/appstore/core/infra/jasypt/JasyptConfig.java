@@ -5,7 +5,9 @@ import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
 import org.jasypt.encryption.pbe.config.SimpleStringPBEConfig;
 import org.springframework.context.annotation.Bean;
 
-public class JasyptConfig {
+import com.mangkyu.appstore.core.infra.AppStoreConfigMarker;
+
+public class JasyptConfig implements AppStoreConfigMarker {
 
 	final static String KEY = "default!23";
 

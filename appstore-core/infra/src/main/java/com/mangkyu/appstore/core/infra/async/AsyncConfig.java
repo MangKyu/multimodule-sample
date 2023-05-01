@@ -10,8 +10,10 @@ import org.springframework.context.event.SimpleApplicationEventMulticaster;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
+import com.mangkyu.appstore.core.infra.AppStoreConfigMarker;
+
 @EnableAsync
-public class AsyncConfig {
+public class AsyncConfig implements AppStoreConfigMarker {
 
 	/**
 	 * 이벤트 처리는 반드시 비동기로만 처리되도록 설정함

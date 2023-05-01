@@ -1,17 +1,15 @@
 package com.mangkyu.appstore.apis.consumer.config;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 
-import com.mangkyu.appstore.core.infra.async.AsyncConfig;
-import com.mangkyu.appstore.core.infra.jasypt.JasyptConfig;
-import com.mangkyu.appstore.core.infra.jpa.JpaConfig;
+import com.mangkyu.appstore.core.infra.AppStoreConfigGroup;
+import com.mangkyu.appstore.core.infra.EnableAppStoreConfig;
 
 @Configuration(proxyBeanMethods = false)
-@Import({
-	JpaConfig.class,
-	AsyncConfig.class,
-	JasyptConfig.class,
+@EnableAppStoreConfig({
+	AppStoreConfigGroup.ASYNC,
+	AppStoreConfigGroup.JASYPT,
+	AppStoreConfigGroup.JPA,
 })
 class InfraConfig {
 }

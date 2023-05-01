@@ -4,8 +4,10 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.mangkyu.appstore.core.infra.AppStoreConfigMarker;
+
 @EnableTransactionManagement
 @EntityScan("com.mangkyu.appstore")
 @EnableJpaRepositories("com.mangkyu.appstore")
-public class JpaConfig {
+public class JpaConfig implements AppStoreConfigMarker {
 }
