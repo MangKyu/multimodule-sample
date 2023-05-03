@@ -7,7 +7,4 @@ jar { enabled = true }
 
 dependencies {
 
-    api 'org.apache.commons:commons-lang3'
-    api 'org.apache.commons:commons-collections4:4.4'
-
 }

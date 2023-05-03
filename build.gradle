@@ -7,7 +7,6 @@ buildscript {
 // plugin 이란 미리 구성해놓은 task 들의 모음이며, 특정 빌드과정에 필요한 기본정보를 포함함
 plugins {
     id 'java' // 테스트, 번들링 기능과 함께 Java 컴파일을 추가해주며, 다른 JVM 언어 플러그인의 기반이 됨
-    id 'java-library' // java 플러그인을 확장함, 이를 통해 implementation과는 분리되는 api 기능을 사용할 수 있음
     id 'org.springframework.boot' version '3.0.4' // 실행가능한 jar 또는 war로 패키징하여 애플리케이션 실행이 가능하도록 하며, spring-boot-dependencies 기반의 의존성 관리를 사용함
     id 'io.spring.dependency-management' version '1.1.0' // 자동으로 spring-boot-dependencies bom을 끌어와서 버전 관리를 해줌
 }
@@ -17,6 +16,11 @@ plugins {
 allprojects {
     sourceCompatibility = '17'
     targetCompatibility = '17'
+
+    // 라이브러리들을 받아올 원격 저장소들을 설정함
+    repositories {
+        mavenCentral()
+    }
 }
 
 // 루트 제외한 전체 서브 모듈에 해당되는 설정
@@ -26,19 +30,15 @@ subprojects {
 
     // subprojects 블록 안에서는 plugins 블록을 사용할 수 없으므로 apply plugin을 사용해야 함
     apply plugin: 'java'
-    apply plugin: 'java-library'
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
 
-    // 라이브러리들을 받아올 원격 저장소들을 설정함
-    repositories {
-        mavenCentral()
-    }
-
-
     // 모든 서브 모듈에서 사용될 공통 의존성들을 추가함
     dependencies {
+
+        implementation 'org.apache.commons:commons-lang3'
+        implementation 'org.apache.commons:commons-collections4:4.4'
         implementation "org.projectlombok:lombok"
         annotationProcessor "org.projectlombok:lombok"
         implementation 'org.springframework.boot:spring-boot-starter-web'
