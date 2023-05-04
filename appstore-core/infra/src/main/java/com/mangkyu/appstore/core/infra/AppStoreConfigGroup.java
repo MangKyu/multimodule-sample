@@ -16,6 +16,6 @@ public enum AppStoreConfigGroup {
 	JPA(JpaConfig.class),
 	;
 
-	private final Class<? extends AppStoreConfigMarker> configClass;
+	private final Class<? extends AppStoreConfig> configClass;
 
 }
